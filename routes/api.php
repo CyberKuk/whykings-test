@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::get('/person', function (Request $request) {
+    return 'test person get';
+});
+
+
+Route::post('/person', function (Request $request) {
+    return 'test person get';
 });
