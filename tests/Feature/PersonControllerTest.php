@@ -11,7 +11,7 @@ class PersonControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function testSaveOk()
+    public function testSaveOk(): void
     {
         $response = $this->post('/person', [
                                     "name"      => "John",
@@ -25,7 +25,7 @@ class PersonControllerTest extends TestCase
     /**
      * @dataProvider errorDataProvider
      */
-    public function testSaveError(array $data, string $expectedMessage)
+    public function testSaveError(array $data, string $expectedMessage): void
     {
         $response = $this->post('/person', $data);
         $response->assertStatus(422);
@@ -91,7 +91,7 @@ class PersonControllerTest extends TestCase
         ];
     }
 
-    public function testOutput()
+    public function testList(): void
     {
         Person::factory()->count(3)->create();
 
